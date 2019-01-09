@@ -1,0 +1,27 @@
+{
+    "name": "canren/laravel-mongodb",
+    "description": "lar",
+    "keywords": ["laravel", "lumen", "mongodb", "mongo", "database", "model"],
+    "authors": [{
+        "name": "fengzi",
+        "email": "bestsxf@gmail.com"
+    }],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "^5.4",
+        "mongodb/mongodb": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Canren\\Mongodb\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Canren\\Mongodb\\MongodbServiceProvider"
+            ]
+        }
+    }
+}
