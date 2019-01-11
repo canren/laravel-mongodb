@@ -30,6 +30,7 @@ $app->register(Canren\Mongodb\MongoServiceProvider::class);
         'username' => env('MONGO_DEFAULT_USERNAME'),
         'password' => env('MONGO_DEFAULT_PASSWORD'),
         'port' => env('MONGO_DEFAULT_CLIENT_PORT', 27017),
+        'port' => env('MONGO_DEFAULT_OPTION', null),
         'database' => env('MONGO_DEFAULT_TABLE_NAME', 'test'),
     ],
     'xxxx' => ['...']
@@ -42,6 +43,7 @@ MONGO_DEFAULT_CLIENT=127.0.0.1 # 单机配置
 MONGO_DEFAULT_CLIENT_PORT=27017
 MONGO_DEFAULT_USERNAME=
 MONGO_DEFAULT_PASSWORD=
+MONGO_DEFAULT_OPTION=authSource=admin&replicaSet=replica
 MONGODB_TABLE_NAME=test
 ```
 
