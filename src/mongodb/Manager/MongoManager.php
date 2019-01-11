@@ -45,8 +45,14 @@ class MongoManager
         if (null == $params) {
             throw new Exception("Redis connection [{$this->driver}] not configured.");
         }
-        $link = 'mongodb://' . ($params['username'] && $params['password'] ? $params['username'] . ':' . $params['password'] . '@' : '')
-            . $params['host'] . ($params['port'] ? ':' . $params['port'] : '');
+        $host = explode(',', $params['host']);
+        $linkConfig = [];
+        foreach ($host as $v) {
+            $linkConfig[] = 'mongodb://' . ($params['username'] && $params['password'] ? $params['username'] . ':' . $params['password'] . '@' : '')
+                . $v . ($params['port'] ? ':' . $params['port'] : '');
+        }
+
+        $link = implode(',', $linkConfig);
 
         $database = $params['database'];
         $model = (new \MongoDB\Client($link))->$database;

@@ -33,7 +33,16 @@ $app->register(Canren\Mongodb\MongoServiceProvider::class);
         'database' => env('MONGO_DEFAULT_TABLE_NAME', 'test'),
     ],
     'xxxx' => ['...']
-],
+]
+```
+.env配置
+```
+MONGO_DEFAULT_CLIENT=127.0.0.1,127.0.0.2 #副本集配置
+MONGO_DEFAULT_CLIENT=127.0.0.1 # 单机配置
+MONGO_DEFAULT_CLIENT_PORT=27017
+MONGO_DEFAULT_USERNAME=
+MONGO_DEFAULT_PASSWORD=
+MONGODB_TABLE_NAME=test
 ```
 
 ## 使用
