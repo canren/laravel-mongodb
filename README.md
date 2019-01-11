@@ -51,8 +51,8 @@ MONGODB_TABLE_NAME=test
 ```
 class MyModel {
 
-	// 实例化表
-	public $collection;
+    // 实例化表
+    public $collection;
 
     public function __construct()
     {
