@@ -53,6 +53,7 @@ class MongoManager
         }
 
         $link = implode(',', $linkConfig);
+        $link .= null == '/' . $params['database'];
         $link .= null == $params['option'] ?'':  '?' . $params['option'];
 
         $database = $params['database'];
