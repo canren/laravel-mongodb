@@ -53,6 +53,7 @@ class MongoManager
         }
 
         $link = implode(',', $linkConfig);
+        $link .= null == $params['option'] ?'':  '?' . $params['option'];
 
         $database = $params['database'];
         $model = (new \MongoDB\Client($link))->$database;
