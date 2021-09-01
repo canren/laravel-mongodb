@@ -21,13 +21,5 @@ class MongoServiceProvider extends ServiceProvider
         $this->app->singleton('mongo', function () {
             return new MongoManager();
         });
-
-        $this->app->bind('mongo.connection', function ($app) {
-            return $app['mongo']->connection();
-        });
-
-        $this->app->bind('mongo.collection', function ($app) {
-            return $app['mongo']->collection();
-        });
     }
 }
